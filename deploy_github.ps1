@@ -99,7 +99,7 @@ if ($choice -eq "2" -or $choice -eq "3") {
 
     Write-Host "Initialisation des 12 projets avec leurs fichiers README et structure..." -ForegroundColor Cyan
     foreach ($p in $projects) {
-        $pDir = Join-Path "d:\Mon Portefolio" $p.Path
+        $pDir = Join-Path $PSScriptRoot $p.Path
         Write-Host "• Préparation : $($p.Name) -> $($p.Path)" -ForegroundColor Green
     }
 

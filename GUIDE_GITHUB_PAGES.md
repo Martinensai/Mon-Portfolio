@@ -11,7 +11,7 @@ Email configuré : `ahouetognonmartin@gmail.com`
    - Nom d'utilisateur : `Martin AHOUETOGNON`
    - Email : `ahouetognonmartin@gmail.com`
    - Branche par défaut : `main`
-3. ✅ **Dépôt Git local initialisé** dans `d:\Mon Portefolio` avec un commit initial complet regroupant :
+3. ✅ **Dépôt Git local initialisé** dans `d:\Mon Portfolio` avec un commit initial complet regroupant :
    - Le site web vitrine interactif ([index.html](index.html))
    - Les feuilles de style et design system ([styles/main.css](styles/main.css), [styles/components.css](styles/components.css))
    - Les 3 simulateurs interactifs en JavaScript ([scripts/simulators.js](scripts/simulators.js), [scripts/app.js](scripts/app.js))
@@ -35,7 +35,7 @@ Email configuré : `ahouetognonmartin@gmail.com`
 
 ### Étape 2 : Envoyer votre code sur GitHub (Push)
 
-Ouvrez un terminal PowerShell dans `d:\Mon Portefolio` (ou utilisez le script automatisé `deploy_github.ps1`) et tapez :
+Ouvrez un terminal PowerShell dans `d:\Mon Portfolio` (ou utilisez le script automatisé `deploy_github.ps1`) et tapez :
 
 ```powershell
 # Remplacez <VOTRE_USERNAME_GITHUB> par votre identifiant GitHub réel :
