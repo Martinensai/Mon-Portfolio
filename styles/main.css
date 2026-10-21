@@ -256,6 +256,12 @@ button {
   color: #fcd34d;
 }
 
+.badge-pbi {
+  background: rgba(242, 200, 17, 0.15);
+  border: 1px solid rgba(242, 200, 17, 0.45);
+  color: #fbbf24;
+}
+
 .badge-available {
   background: rgba(16, 185, 129, 0.15);
   border: 1px solid rgba(16, 185, 129, 0.35);

@@ -1,14 +1,14 @@
 # Portfolio Hub & Projets GitHub - Martin AHOUETOGNON
 **Ingénieur Data Science & IA (Diplômé ENSAI) | Double Compétence Data Engineering & Data Analytics**
 
-Ce dépôt regroupe la vitrine web interactive ainsi que la documentation technique complète (README, architecture, métriques et code structures) pour les 12 projets répartis sur les 3 spécialités.
+Ce dépôt regroupe la vitrine web interactive ainsi que la documentation technique complète (README, architecture, métriques et code structures) pour les 13 projets répartis sur les 3 spécialités.
 
 ## 📁 Architecture du Répertoire
 
 - `index.html` : Portail web interactif (Hub central et 3 portfolios spécialisés avec simulateurs interactifs).
 - `styles/` : Feuilles de styles modulaires et design system moderne (dark mode, glassmorphism, animations fluides).
 - `scripts/` : Logique applicative, gestion de la navigation SPA, et simulateurs interactifs de démonstration.
-- `github-repos/` : Modèles complets de README.md professionnels pour chacun des 12 dépôts GitHub, plus le README de profil GitHub personnel.
+- `github-repos/` : Modèles complets de README.md professionnels pour chacun des 13 dépôts GitHub, plus le README de profil GitHub personnel.
 
 ---
 
@@ -33,3 +33,5 @@ Ce dépôt regroupe la vitrine web interactive ainsi que la documentation techni
 2. **[02-cohort-analysis-rfm-segmentation](github-repos/data-analyst/02-cohort-analysis-rfm-segmentation/README.md)** : Analyse de cohorte et segmentation client RFM avec SQL avancé et Pandas.
 3. **[03-climate-agriculture-impact-analysis](github-repos/data-analyst/03-climate-agriculture-impact-analysis/README.md)** : Analyse géospatiale et statistique de l'impact climatique sur les rendements agricoles.
 4. **[04-real-estate-scraping-market-analysis](github-repos/data-analyst/04-real-estate-scraping-market-analysis/README.md)** : Scraping et analyse économétrique du marché immobilier résidentiel.
+5. **[05-powerbi-sales-performance](github-repos/data-analyst/05-powerbi-sales-performance/README.md)** : Tableau de bord exécutif Power BI pour le pilotage des ventes et le diagnostic des commandes annulées (schéma en étoile, mesures DAX, thème sombre #181535).
+

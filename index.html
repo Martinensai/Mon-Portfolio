@@ -53,7 +53,7 @@
           <li class="nav-item">
             <a href="#data-analyst" class="nav-link" data-target="data-analyst" id="nav-da">
               <span>📊 Data Analyst</span>
-              <span class="nav-count-badge">4</span>
+              <span class="nav-count-badge">5</span>
             </a>
           </li>
           <li class="nav-item">
@@ -211,15 +211,15 @@
                 Capacité à faire parler les données complexes : création de dashboards réactifs, analyses de cohorte en SQL fenêtré, cartographie géospatiale et études de marché immobilier.
               </p>
               <div class="domain-card-skills">
+                <span class="skill-tag">Microsoft Power BI</span>
+                <span class="skill-tag">DAX & Star Schema</span>
                 <span class="skill-tag">SQL Avancé (CTE, Window)</span>
                 <span class="skill-tag">Streamlit & Plotly</span>
                 <span class="skill-tag">Analyse de Cohorte RFM</span>
-                <span class="skill-tag">Cartographie Folium</span>
-                <span class="skill-tag">Web Scraping</span>
               </div>
             </div>
             <div class="domain-card-footer">
-              <span class="domain-project-count">4 Projets Spécialisés</span>
+              <span class="domain-project-count">5 Projets Spécialisés</span>
               <button class="btn btn-primary btn-sm" data-explore-target="data-analyst" id="btn-portal-da">
                 Entrer dans l'univers DA →
               </button>
@@ -938,6 +938,43 @@
               <a href="github-repos/data-analyst/04-real-estate-scraping-market-analysis/README.md" class="btn btn-primary btn-sm" target="_blank" rel="noopener">README GitHub ↗</a>
             </div>
           </article>
+
+          <!-- Project DA 5 : Power BI Sales & Cancelled Orders Analytics -->
+          <article class="project-card" style="border-color: rgba(242, 200, 17, 0.35);">
+            <span class="project-number">05 / DA</span>
+            <div class="project-header">
+              <div class="project-badge-line">
+                <span class="badge badge-pbi">Power BI Desktop</span>
+                <span class="badge badge-ensai">Modélisation DAX</span>
+              </div>
+              <h3>Tableau de Bord Exécutif Power BI : Pilotage des Ventes & Attrition</h3>
+              <p class="project-description">
+                Rapport décisionnel complet articulé en 2 perspectives clés (croissance du CA et diagnostic causal des commandes annulées). Schéma en étoile à 5 tables et mesures DAX optimisées.
+              </p>
+            </div>
+            <div class="project-metrics-grid">
+              <div class="metric-box">
+                <span class="metric-label">Modélisation</span>
+                <span class="metric-value">Star Schema (5 Tables)</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Dataviz</span>
+                <span class="metric-value">Dark Theme #181535</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="skill-tag">Power BI Desktop</span>
+              <span class="skill-tag">DAX Avancé</span>
+              <span class="skill-tag">Star Schema</span>
+              <span class="skill-tag">Retail Analytics</span>
+              <span class="skill-tag">Infobulle Dynamique</span>
+            </div>
+            <div class="project-actions" style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <button class="btn btn-secondary btn-sm" data-project-id="da-05">Détails & Captures HD</button>
+              <a href="projet_sales.pbix" download="projet_sales.pbix" class="btn btn-primary btn-sm" title="Télécharger le fichier projet_sales.pbix pour l'ouvrir dans Microsoft Power BI Desktop">Fichier .PBIX 📥</a>
+              <a href="github-repos/data-analyst/05-powerbi-sales-performance/README.md" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">README GitHub ↗</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1074,10 +1111,16 @@
         <div class="modal-section-title"><span>🛠️</span> Technologies & Outils Déployés</div>
         <div id="modal-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem;"></div>
 
+        <div id="modal-gallery-section" style="display: none; margin-bottom: 1.5rem;">
+          <div class="modal-section-title"><span>🖼️</span> Aperçus Haute Définition du Tableau de Bord</div>
+          <div id="modal-gallery" class="modal-gallery-grid"></div>
+        </div>
+
         <div class="modal-section-title"><span>💻</span> Extrait d'Implémentation Clé</div>
         <pre class="code-block"><code id="modal-code"># Code snippet...</code></pre>
 
-        <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem;">
+          <a href="#" download class="btn btn-secondary" id="modal-download-pbix" style="display: none;">📥 Télécharger le fichier .PBIX</a>
           <a href="#" class="btn btn-primary" id="modal-repo-link" target="_blank" rel="noopener">Consulter le README du Repo ↗</a>
         </div>
       </div>

@@ -277,6 +277,52 @@ folium.Choropleth(
     codeSnippet: `# Calcul du rendement locatif brut et prime de transport
 df['rentabilite_brute'] = (df['loyer_mensuel_estime'] * 12) / df['prix_acquisition'] * 100
 hedonic_model = smf.ols('prix_m2 ~ surface + C(dpe) + distance_metro_minutes + C(arrondissement)', data=df).fit()`
+  },
+  "da-05": {
+    domain: "data-analyst",
+    badge: "Power BI Desktop & DAX",
+    title: "Tableau de Bord Exécutif Power BI : Ventes & Commandes Annulées",
+    subtitle: "Schéma en étoile à 5 tables, mesures DAX optimisées et diagnostic d'attrition opérationnelle",
+    summary: "Conception complète d'un rapport décisionnel sous Microsoft Power BI Desktop pour optimiser le pilotage des ventes omnicanales et réduire les pertes de conversion liées aux commandes annulées. Le projet repose sur une modélisation relationnelle rigoureuse en schéma en étoile (tables de faits et dimensions) et un jeu complet de mesures DAX en thème sombre ergonomique (#181535).",
+    highlights: [
+      "Double perspective analytique : Pilotage de la croissance du CA vs Diagnostic causal des commandes annulées",
+      "Architecture relationnelle en étoile (vente, client, produit, region, mesures)",
+      "KPIs stratégiques : Chiffre d'Affaires, Quantités vendues, Panier Moyen (AOV) et Taux d'annulation (%)",
+      "Navigation ergonomique sur thème sombre (#181535) avec infobulle dynamique par région",
+      "Fichier source .PBIX directement téléchargeable pour audit technique sous Power BI Desktop"
+    ],
+    techStack: ["Microsoft Power BI Desktop", "DAX Avancé", "Modélisation Star Schema", "Business Intelligence", "Retail Analytics", "Infobulle Dynamique"],
+    repoPath: "github-repos/data-analyst/05-powerbi-sales-performance/README.md",
+    pbixPath: "projet_sales.pbix",
+    images: [
+      {
+        badge: "Page 1 : Ventes",
+        title: "Tableau de Bord Ventes & Performance Commerciale",
+        url: "assets/powerbi/page_ventes.jpg",
+        description: "Suivi mensuel du CA et des volumes, répartition du CA par catégorie de produits (donut chart) et classement régional."
+      },
+      {
+        badge: "Page 2 : Annulations",
+        title: "Diagnostic des Commandes Annulées & Pertes",
+        url: "assets/powerbi/page_commandes_annulees.jpg",
+        description: "Analyse du pourcentage d'annulation par région, treemap par catégorie de produits, courbe de tendance et ribbon chart."
+      }
+    ],
+    codeSnippet: `-- Mesures DAX clés créées dans le rapport projet_sales.pbix
+Total Ventes = SUM(vente[TotalPrice])
+Quantité vendue = SUM(vente[Quantity])
+Nombre de commande = DISTINCTCOUNT(vente[Id order])
+Commande moyenne = DIVIDE([Total Ventes], [Nombre de commande], 0)
+
+-- Analyse des défaillances et pertes de conversion
+Total de commandes annulées = 
+    CALCULATE([Nombre de commande], vente[OrderStatus] = "Annulé")
+
+Montant commandes annulées = 
+    CALCULATE([Total Ventes], vente[OrderStatus] = "Annulé")
+
+Pourcentage de commandes annulées = 
+    DIVIDE([Total de commandes annulées], [Nombre de commande], 0)`
   }
 };
 
@@ -423,9 +469,50 @@ const App = {
       tagsContainer.appendChild(span);
     });
 
+    // Gallery / Visual Previews
+    const gallerySection = document.getElementById('modal-gallery-section');
+    const galleryContainer = document.getElementById('modal-gallery');
+    if (galleryContainer && project.images && project.images.length > 0) {
+      galleryContainer.innerHTML = '';
+      project.images.forEach((img, idx) => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+        card.innerHTML = `
+          <div class="gallery-card-img-wrapper" title="Cliquer pour afficher l'image en grand format">
+            <span class="gallery-card-badge">${img.badge || ('Vue ' + (idx + 1))}</span>
+            <img src="${img.url}" alt="${img.title}" class="gallery-card-img" loading="lazy" />
+          </div>
+          <div class="gallery-card-body">
+            <div class="gallery-card-title">${img.title}</div>
+            <p class="gallery-card-desc">${img.description}</p>
+          </div>
+        `;
+        card.querySelector('.gallery-card-img-wrapper').addEventListener('click', () => {
+          window.open(img.url, '_blank');
+        });
+        galleryContainer.appendChild(card);
+      });
+      if (gallerySection) gallerySection.style.display = 'block';
+    } else {
+      if (gallerySection) gallerySection.style.display = 'none';
+    }
+
     // Code snippet
     const codeElem = document.getElementById('modal-code');
     if (codeElem) codeElem.textContent = project.codeSnippet;
+
+    // Direct Download PBIX button
+    const downloadPbixBtn = document.getElementById('modal-download-pbix');
+    if (downloadPbixBtn) {
+      if (project.pbixPath) {
+        downloadPbixBtn.href = project.pbixPath;
+        downloadPbixBtn.setAttribute('download', project.pbixPath.split('/').pop());
+        downloadPbixBtn.style.display = 'inline-flex';
+        downloadPbixBtn.textContent = `📥 Télécharger ${project.pbixPath.split('/').pop()}`;
+      } else {
+        downloadPbixBtn.style.display = 'none';
+      }
+    }
 
     // GitHub Repo Link
     const repoBtn = document.getElementById('modal-repo-link');
